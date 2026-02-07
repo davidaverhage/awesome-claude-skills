@@ -1,87 +1,88 @@
 {
   "save_format_version": "1.0",
+  "note": "All offset values are in hexadecimal. Total save size is approximately 65KB (0x10000 bytes)",
   "structure": {
     "player": {
-      "name": {"type": "string", "max_length": 10, "offset": 0x0000},
-      "trainer_id": {"type": "uint16", "offset": 0x000A},
-      "secret_id": {"type": "uint16", "offset": 0x000C},
-      "gender": {"type": "uint8", "offset": 0x000E, "values": {"male": 0, "female": 1}},
-      "money": {"type": "uint32", "offset": 0x0010, "max": 999999},
-      "coins": {"type": "uint16", "offset": 0x0014, "max": 9999},
-      "registered_item": {"type": "uint16", "offset": 0x0016},
+      "name": {"type": "string", "max_length": 10, "offset": "0x0000"},
+      "trainer_id": {"type": "uint16", "offset": "0x000A"},
+      "secret_id": {"type": "uint16", "offset": "0x000C"},
+      "gender": {"type": "uint8", "offset": "0x000E", "values": {"male": 0, "female": 1}},
+      "money": {"type": "uint32", "offset": "0x0010", "max": 999999},
+      "coins": {"type": "uint16", "offset": "0x0014", "max": 9999},
+      "registered_item": {"type": "uint16", "offset": "0x0016"},
       "position": {
-        "map_id": {"type": "uint16", "offset": 0x0020},
-        "x": {"type": "uint16", "offset": 0x0022},
-        "y": {"type": "uint16", "offset": 0x0024},
-        "direction": {"type": "uint8", "offset": 0x0026}
+        "map_id": {"type": "uint16", "offset": "0x0020"},
+        "x": {"type": "uint16", "offset": "0x0022"},
+        "y": {"type": "uint16", "offset": "0x0024"},
+        "direction": {"type": "uint8", "offset": "0x0026"}
       }
     },
     
     "party": {
-      "count": {"type": "uint8", "offset": 0x0100, "max": 6},
+      "count": {"type": "uint8", "offset": "0x0100", "max": 6},
       "pokemon": {
         "array_size": 6,
         "element_size": 100,
-        "base_offset": 0x0110,
+        "base_offset": "0x0110",
         "structure": {
-          "species_id": {"type": "uint16", "offset": 0x00},
-          "held_item": {"type": "uint16", "offset": 0x02},
+          "species_id": {"type": "uint16", "offset": "0x00"},
+          "held_item": {"type": "uint16", "offset": "0x02"},
           "moves": {
             "array_size": 4,
             "element_size": 2,
-            "offset": 0x04,
+            "offset": "0x04",
             "type": "uint16"
           },
           "pp": {
             "array_size": 4,
             "element_size": 1,
-            "offset": 0x0C,
+            "offset": "0x0C",
             "type": "uint8"
           },
-          "pp_bonuses": {"type": "uint8", "offset": 0x10},
-          "friendship": {"type": "uint8", "offset": 0x11},
-          "level": {"type": "uint8", "offset": 0x12},
-          "pokerus": {"type": "uint8", "offset": 0x13},
-          "met_location": {"type": "uint16", "offset": 0x14},
-          "met_level": {"type": "uint8", "offset": 0x16},
-          "met_game": {"type": "uint8", "offset": 0x17},
-          "pokeball": {"type": "uint8", "offset": 0x18},
+          "pp_bonuses": {"type": "uint8", "offset": "0x10"},
+          "friendship": {"type": "uint8", "offset": "0x11"},
+          "level": {"type": "uint8", "offset": "0x12"},
+          "pokerus": {"type": "uint8", "offset": "0x13"},
+          "met_location": {"type": "uint16", "offset": "0x14"},
+          "met_level": {"type": "uint8", "offset": "0x16"},
+          "met_game": {"type": "uint8", "offset": "0x17"},
+          "pokeball": {"type": "uint8", "offset": "0x18"},
           "original_trainer": {
-            "name": {"type": "string", "max_length": 10, "offset": 0x20},
-            "id": {"type": "uint16", "offset": 0x2A},
-            "secret_id": {"type": "uint16", "offset": 0x2C},
-            "gender": {"type": "uint8", "offset": 0x2E}
+            "name": {"type": "string", "max_length": 10, "offset": "0x20"},
+            "id": {"type": "uint16", "offset": "0x2A"},
+            "secret_id": {"type": "uint16", "offset": "0x2C"},
+            "gender": {"type": "uint8", "offset": "0x2E"}
           },
           "stats": {
-            "hp": {"type": "uint16", "offset": 0x30},
-            "attack": {"type": "uint16", "offset": 0x32},
-            "defense": {"type": "uint16", "offset": 0x34},
-            "speed": {"type": "uint16", "offset": 0x36},
-            "special_attack": {"type": "uint16", "offset": 0x38},
-            "special_defense": {"type": "uint16", "offset": 0x3A}
+            "hp": {"type": "uint16", "offset": "0x30"},
+            "attack": {"type": "uint16", "offset": "0x32"},
+            "defense": {"type": "uint16", "offset": "0x34"},
+            "speed": {"type": "uint16", "offset": "0x36"},
+            "special_attack": {"type": "uint16", "offset": "0x38"},
+            "special_defense": {"type": "uint16", "offset": "0x3A"}
           },
-          "current_hp": {"type": "uint16", "offset": 0x3C},
-          "max_hp": {"type": "uint16", "offset": 0x3E},
-          "exp": {"type": "uint32", "offset": 0x40},
+          "current_hp": {"type": "uint16", "offset": "0x3C"},
+          "max_hp": {"type": "uint16", "offset": "0x3E"},
+          "exp": {"type": "uint32", "offset": "0x40"},
           "evs": {
-            "hp": {"type": "uint8", "offset": 0x44},
-            "attack": {"type": "uint8", "offset": 0x45},
-            "defense": {"type": "uint8", "offset": 0x46},
-            "speed": {"type": "uint8", "offset": 0x47},
-            "special_attack": {"type": "uint8", "offset": 0x48},
-            "special_defense": {"type": "uint8", "offset": 0x49}
+            "hp": {"type": "uint8", "offset": "0x44"},
+            "attack": {"type": "uint8", "offset": "0x45"},
+            "defense": {"type": "uint8", "offset": "0x46"},
+            "speed": {"type": "uint8", "offset": "0x47"},
+            "special_attack": {"type": "uint8", "offset": "0x48"},
+            "special_defense": {"type": "uint8", "offset": "0x49"}
           },
           "ivs": {
-            "hp": {"type": "uint8", "offset": 0x4A},
-            "attack": {"type": "uint8", "offset": 0x4B},
-            "defense": {"type": "uint8", "offset": 0x4C},
-            "speed": {"type": "uint8", "offset": 0x4D},
-            "special_attack": {"type": "uint8", "offset": 0x4E},
-            "special_defense": {"type": "uint8", "offset": 0x4F}
+            "hp": {"type": "uint8", "offset": "0x4A"},
+            "attack": {"type": "uint8", "offset": "0x4B"},
+            "defense": {"type": "uint8", "offset": "0x4C"},
+            "speed": {"type": "uint8", "offset": "0x4D"},
+            "special_attack": {"type": "uint8", "offset": "0x4E"},
+            "special_defense": {"type": "uint8", "offset": "0x4F"}
           },
-          "status_condition": {"type": "uint8", "offset": 0x50},
-          "nickname": {"type": "string", "max_length": 10, "offset": 0x52},
-          "is_egg": {"type": "bool", "offset": 0x5C}
+          "status_condition": {"type": "uint8", "offset": "0x50"},
+          "nickname": {"type": "string", "max_length": 10, "offset": "0x52"},
+          "is_egg": {"type": "bool", "offset": "0x5C"}
         }
       }
     },
@@ -89,13 +90,13 @@
     "pokedex": {
       "seen": {
         "type": "bitfield",
-        "offset": 0x1000,
+        "offset": "0x1000",
         "size": 64,
         "description": "512 bits for 512 Pokémon species"
       },
       "owned": {
         "type": "bitfield",
-        "offset": 0x1040,
+        "offset": "0x1040",
         "size": 64,
         "description": "512 bits for 512 Pokémon species"
       }
@@ -104,125 +105,125 @@
     "bag": {
       "items": {
         "max_count": 50,
-        "base_offset": 0x2000,
+        "base_offset": "0x2000",
         "element_size": 4,
         "structure": {
-          "item_id": {"type": "uint16", "offset": 0x00},
-          "quantity": {"type": "uint16", "offset": 0x02}
+          "item_id": {"type": "uint16", "offset": "0x00"},
+          "quantity": {"type": "uint16", "offset": "0x02"}
         }
       },
       "key_items": {
         "max_count": 20,
-        "base_offset": 0x2100,
+        "base_offset": "0x2100",
         "element_size": 2,
         "type": "uint16"
       },
       "medicine": {
         "max_count": 30,
-        "base_offset": 0x2150,
+        "base_offset": "0x2150",
         "element_size": 4,
         "structure": {
-          "item_id": {"type": "uint16", "offset": 0x00},
-          "quantity": {"type": "uint16", "offset": 0x02}
+          "item_id": {"type": "uint16", "offset": "0x00"},
+          "quantity": {"type": "uint16", "offset": "0x02"}
         }
       },
       "poke_balls": {
         "max_count": 20,
-        "base_offset": 0x2200,
+        "base_offset": "0x2200",
         "element_size": 4,
         "structure": {
-          "item_id": {"type": "uint16", "offset": 0x00},
-          "quantity": {"type": "uint16", "offset": 0x02}
+          "item_id": {"type": "uint16", "offset": "0x00"},
+          "quantity": {"type": "uint16", "offset": "0x02"}
         }
       },
       "tms_hms": {
         "type": "bitfield",
-        "offset": 0x2300,
+        "offset": "0x2300",
         "size": 16,
         "description": "128 bits for TMs and HMs"
       },
       "berries": {
         "max_count": 64,
-        "base_offset": 0x2320,
+        "base_offset": "0x2320",
         "element_size": 4,
         "structure": {
-          "berry_id": {"type": "uint16", "offset": 0x00},
-          "quantity": {"type": "uint16", "offset": 0x02}
+          "berry_id": {"type": "uint16", "offset": "0x00"},
+          "quantity": {"type": "uint16", "offset": "0x02"}
         }
       }
     },
     
     "pc_boxes": {
-      "current_box": {"type": "uint8", "offset": 0x3000},
+      "current_box": {"type": "uint8", "offset": "0x3000"},
       "box_names": {
         "array_size": 14,
         "element_size": 10,
-        "base_offset": 0x3010,
+        "base_offset": "0x3010",
         "type": "string"
       },
       "boxes": {
         "array_size": 14,
         "pokemon_per_box": 30,
-        "base_offset": 0x4000,
+        "base_offset": "0x4000",
         "element_size": 100,
         "structure": "same as party.pokemon.structure"
       }
     },
     
     "game_stats": {
-      "badges": {"type": "uint8", "offset": 0x8000},
+      "badges": {"type": "uint8", "offset": "0x8000"},
       "play_time": {
-        "hours": {"type": "uint16", "offset": 0x8010},
-        "minutes": {"type": "uint8", "offset": 0x8012},
-        "seconds": {"type": "uint8", "offset": 0x8013}
+        "hours": {"type": "uint16", "offset": "0x8010"},
+        "minutes": {"type": "uint8", "offset": "0x8012"},
+        "seconds": {"type": "uint8", "offset": "0x8013"}
       },
-      "steps_taken": {"type": "uint32", "offset": 0x8014},
-      "battles_won": {"type": "uint32", "offset": 0x8018},
-      "battles_lost": {"type": "uint32", "offset": 0x801C},
-      "pokemon_caught": {"type": "uint32", "offset": 0x8020},
-      "eggs_hatched": {"type": "uint32", "offset": 0x8024},
-      "evolutions": {"type": "uint32", "offset": 0x8028}
+      "steps_taken": {"type": "uint32", "offset": "0x8014"},
+      "battles_won": {"type": "uint32", "offset": "0x8018"},
+      "battles_lost": {"type": "uint32", "offset": "0x801C"},
+      "pokemon_caught": {"type": "uint32", "offset": "0x8020"},
+      "eggs_hatched": {"type": "uint32", "offset": "0x8024"},
+      "evolutions": {"type": "uint32", "offset": "0x8028"}
     },
     
     "flags": {
       "story_flags": {
         "type": "bitfield",
-        "offset": 0x9000,
+        "offset": "0x9000",
         "size": 128,
         "description": "1024 bits for story progression flags"
       },
       "event_flags": {
         "type": "bitfield",
-        "offset": 0x9080,
+        "offset": "0x9080",
         "size": 64,
         "description": "512 bits for event completion flags"
       },
       "trainer_flags": {
         "type": "bitfield",
-        "offset": 0x90C0,
+        "offset": "0x90C0",
         "size": 128,
         "description": "1024 bits for defeated trainers"
       },
       "item_flags": {
         "type": "bitfield",
-        "offset": 0x9140,
+        "offset": "0x9140",
         "size": 64,
         "description": "512 bits for collected items"
       }
     },
     
     "options": {
-      "text_speed": {"type": "uint8", "offset": 0xA000, "values": {"slow": 0, "normal": 1, "fast": 2}},
-      "battle_scene": {"type": "bool", "offset": 0xA001},
-      "battle_style": {"type": "uint8", "offset": 0xA002, "values": {"shift": 0, "set": 1}},
-      "sound_mode": {"type": "uint8", "offset": 0xA003, "values": {"stereo": 0, "mono": 1}},
-      "button_mode": {"type": "uint8", "offset": 0xA004, "values": {"normal": 0, "l_equals_a": 1}},
-      "frame_type": {"type": "uint8", "offset": 0xA005}
+      "text_speed": {"type": "uint8", "offset": "0xA000", "values": {"slow": 0, "normal": 1, "fast": 2}},
+      "battle_scene": {"type": "bool", "offset": "0xA001"},
+      "battle_style": {"type": "uint8", "offset": "0xA002", "values": {"shift": 0, "set": 1}},
+      "sound_mode": {"type": "uint8", "offset": "0xA003", "values": {"stereo": 0, "mono": 1}},
+      "button_mode": {"type": "uint8", "offset": "0xA004", "values": {"normal": 0, "l_equals_a": 1}},
+      "frame_type": {"type": "uint8", "offset": "0xA005"}
     },
     
     "checksum": {
       "type": "uint32",
-      "offset": 0xFFFC,
+      "offset": "0xFFFC",
       "description": "CRC32 checksum of entire save file"
     }
   }
