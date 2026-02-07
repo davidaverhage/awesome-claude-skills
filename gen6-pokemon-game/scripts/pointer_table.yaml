@@ -1,0 +1,43 @@
+# Event Script Pointer Table
+# Maps script IDs to their implementations in event_scripts.yaml
+
+scripts:
+  # Intro and Tutorial
+  elm_intro: 0x0001
+  mom_greeting: 0x0002
+  rival_first: 0x0003
+  guide_gent: 0x0004
+  
+  # Town NPCs
+  violet_gym_guide: 0x0010
+  elder_li: 0x0011
+  guard_check: 0x0012
+  
+  # Route Events
+  youngster_joey_battle: 0x0101
+  youngster_mikey_battle: 0x0102
+  
+  # Gym Leaders
+  falkner_intro: 0x0201
+  falkner_battle: 0x0202
+  falkner_defeat: 0x0203
+  
+  # Item pickups
+  item_potion: 0x1001
+  item_antidote: 0x1002
+  item_berry: 0x1003
+  
+  # Story Events
+  silver_first_encounter: 0x2001
+  team_rocket_slowpoke_well: 0x2002
+  legendary_awakening: 0x2003
+  
+  # Special Interactions
+  daycare_check: 0x3001
+  berry_tree_shake: 0x3002
+  headbutt_tree: 0x3003
+  
+  # Sign Posts
+  sign_new_bark_town: 0x4001
+  sign_cherrygrove_city: 0x4002
+  sign_violet_city: 0x4003

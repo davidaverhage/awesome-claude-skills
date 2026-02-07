@@ -1,0 +1,40 @@
+{
+  "tileset_name": "johto_town_tileset",
+  "tile_width": 16,
+  "tile_height": 16,
+  "image_file": "johto_town.png",
+  "total_tiles": 256,
+  "collision_data": {
+    "walkable": [0, 1, 2, 16, 17, 18, 32, 33, 34],
+    "blocked": [48, 49, 50, 64, 65, 66],
+    "water": [80, 81, 82, 96, 97, 98],
+    "ledge": [112, 113, 114],
+    "grass": [128, 129, 130],
+    "door": [144, 145]
+  },
+  "animations": [
+    {
+      "tile_id": 80,
+      "frames": [80, 81, 82, 81],
+      "frame_duration": 8
+    },
+    {
+      "tile_id": 128,
+      "frames": [128, 129, 128, 130],
+      "frame_duration": 10
+    }
+  ],
+  "layer_priority": {
+    "ground": 0,
+    "objects": 1,
+    "overhead": 2
+  },
+  "palette": {
+    "grass": "#48D048",
+    "path": "#C8A878",
+    "building": "#F8F8F8",
+    "roof": "#D83038",
+    "water": "#4088F8",
+    "shadow": "#000000"
+  }
+}
