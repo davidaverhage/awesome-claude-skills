@@ -1,0 +1,228 @@
+{
+  "evolutions": [
+    {
+      "pokemon_id": 1,
+      "name": "Bulbasaur",
+      "evolves_to": {
+        "pokemon_id": 2,
+        "name": "Ivysaur",
+        "method": "level",
+        "parameter": 16
+      }
+    },
+    {
+      "pokemon_id": 4,
+      "name": "Charmander",
+      "evolves_to": {
+        "pokemon_id": 5,
+        "name": "Charmeleon",
+        "method": "level",
+        "parameter": 16
+      }
+    },
+    {
+      "pokemon_id": 7,
+      "name": "Squirtle",
+      "evolves_to": {
+        "pokemon_id": 8,
+        "name": "Wartortle",
+        "method": "level",
+        "parameter": 16
+      }
+    },
+    {
+      "pokemon_id": 25,
+      "name": "Pikachu",
+      "evolves_to": {
+        "pokemon_id": 26,
+        "name": "Raichu",
+        "method": "stone",
+        "parameter": "Thunder Stone"
+      }
+    },
+    {
+      "pokemon_id": 152,
+      "name": "Chikorita",
+      "evolves_to": {
+        "pokemon_id": 153,
+        "name": "Bayleef",
+        "method": "level",
+        "parameter": 16
+      }
+    },
+    {
+      "pokemon_id": 155,
+      "name": "Cyndaquil",
+      "evolves_to": {
+        "pokemon_id": 156,
+        "name": "Quilava",
+        "method": "level",
+        "parameter": 14
+      }
+    },
+    {
+      "pokemon_id": 158,
+      "name": "Totodile",
+      "evolves_to": {
+        "pokemon_id": 159,
+        "name": "Croconaw",
+        "method": "level",
+        "parameter": 18
+      }
+    }
+  ],
+  "learnsets": [
+    {
+      "pokemon_id": 1,
+      "name": "Bulbasaur",
+      "level_up_moves": [
+        {"level": 1, "move": "Tackle"},
+        {"level": 3, "move": "Growl"},
+        {"level": 7, "move": "Leech Seed"},
+        {"level": 9, "move": "Vine Whip"},
+        {"level": 13, "move": "Poison Powder"},
+        {"level": 13, "move": "Sleep Powder"},
+        {"level": 15, "move": "Take Down"},
+        {"level": 19, "move": "Razor Leaf"},
+        {"level": 21, "move": "Sweet Scent"},
+        {"level": 25, "move": "Growth"},
+        {"level": 27, "move": "Double-Edge"},
+        {"level": 31, "move": "Worry Seed"},
+        {"level": 33, "move": "Synthesis"},
+        {"level": 37, "move": "Seed Bomb"}
+      ],
+      "tm_moves": ["Swords Dance", "Cut", "Toxic", "Hidden Power", "Sunny Day", "Protect"],
+      "egg_moves": ["Amnesia", "Curse", "Endure", "Giga Drain", "Grassy Terrain", "Ingrain"]
+    },
+    {
+      "pokemon_id": 4,
+      "name": "Charmander",
+      "level_up_moves": [
+        {"level": 1, "move": "Scratch"},
+        {"level": 1, "move": "Growl"},
+        {"level": 7, "move": "Ember"},
+        {"level": 10, "move": "Smokescreen"},
+        {"level": 16, "move": "Dragon Rage"},
+        {"level": 19, "move": "Scary Face"},
+        {"level": 25, "move": "Fire Fang"},
+        {"level": 28, "move": "Flame Burst"},
+        {"level": 34, "move": "Slash"},
+        {"level": 37, "move": "Flamethrower"},
+        {"level": 43, "move": "Fire Spin"}
+      ],
+      "tm_moves": ["Dragon Claw", "Toxic", "Hidden Power", "Sunny Day", "Protect", "Flamethrower"],
+      "egg_moves": ["Ancient Power", "Beat Up", "Belly Drum", "Bite", "Counter", "Crunch"]
+    },
+    {
+      "pokemon_id": 7,
+      "name": "Squirtle",
+      "level_up_moves": [
+        {"level": 1, "move": "Tackle"},
+        {"level": 4, "move": "Tail Whip"},
+        {"level": 7, "move": "Water Gun"},
+        {"level": 10, "move": "Withdraw"},
+        {"level": 13, "move": "Bubble"},
+        {"level": 16, "move": "Bite"},
+        {"level": 19, "move": "Rapid Spin"},
+        {"level": 22, "move": "Protect"},
+        {"level": 25, "move": "Water Pulse"},
+        {"level": 28, "move": "Aqua Tail"},
+        {"level": 31, "move": "Skull Bash"},
+        {"level": 34, "move": "Iron Defense"},
+        {"level": 37, "move": "Rain Dance"},
+        {"level": 40, "move": "Hydro Pump"}
+      ],
+      "tm_moves": ["Ice Beam", "Blizzard", "Protect", "Rain Dance", "Toxic", "Hidden Power"],
+      "egg_moves": ["Aqua Jet", "Aqua Ring", "Aura Sphere", "Dragon Pulse", "Fake Out", "Flail"]
+    },
+    {
+      "pokemon_id": 25,
+      "name": "Pikachu",
+      "level_up_moves": [
+        {"level": 1, "move": "Thunder Shock"},
+        {"level": 5, "move": "Tail Whip"},
+        {"level": 7, "move": "Thunder Wave"},
+        {"level": 10, "move": "Quick Attack"},
+        {"level": 13, "move": "Electro Ball"},
+        {"level": 18, "move": "Double Team"},
+        {"level": 21, "move": "Nuzzle"},
+        {"level": 23, "move": "Slam"},
+        {"level": 26, "move": "Thunderbolt"},
+        {"level": 29, "move": "Feint"},
+        {"level": 34, "move": "Agility"},
+        {"level": 37, "move": "Discharge"},
+        {"level": 42, "move": "Light Screen"},
+        {"level": 45, "move": "Thunder"}
+      ],
+      "tm_moves": ["Thunderbolt", "Thunder", "Toxic", "Hidden Power", "Light Screen", "Protect"],
+      "egg_moves": ["Bestow", "Charge", "Disarming Voice", "Double Slap", "Electric Terrain", "Encore"]
+    },
+    {
+      "pokemon_id": 152,
+      "name": "Chikorita",
+      "level_up_moves": [
+        {"level": 1, "move": "Tackle"},
+        {"level": 1, "move": "Growl"},
+        {"level": 6, "move": "Razor Leaf"},
+        {"level": 9, "move": "Poison Powder"},
+        {"level": 12, "move": "Synthesis"},
+        {"level": 17, "move": "Reflect"},
+        {"level": 20, "move": "Magical Leaf"},
+        {"level": 23, "move": "Natural Gift"},
+        {"level": 28, "move": "Sweet Scent"},
+        {"level": 31, "move": "Light Screen"},
+        {"level": 34, "move": "Body Slam"},
+        {"level": 39, "move": "Safeguard"},
+        {"level": 42, "move": "Aromatherapy"},
+        {"level": 45, "move": "Solar Beam"}
+      ],
+      "tm_moves": ["Toxic", "Hidden Power", "Sunny Day", "Light Screen", "Protect", "Solar Beam"],
+      "egg_moves": ["Ancient Power", "Body Slam", "Counter", "Flail", "Grassy Terrain", "Heal Pulse"]
+    },
+    {
+      "pokemon_id": 155,
+      "name": "Cyndaquil",
+      "level_up_moves": [
+        {"level": 1, "move": "Tackle"},
+        {"level": 1, "move": "Leer"},
+        {"level": 6, "move": "Smokescreen"},
+        {"level": 10, "move": "Ember"},
+        {"level": 13, "move": "Quick Attack"},
+        {"level": 20, "move": "Flame Wheel"},
+        {"level": 24, "move": "Defense Curl"},
+        {"level": 31, "move": "Swift"},
+        {"level": 35, "move": "Lava Plume"},
+        {"level": 42, "move": "Flamethrower"},
+        {"level": 46, "move": "Rollout"},
+        {"level": 53, "move": "Double-Edge"},
+        {"level": 57, "move": "Eruption"}
+      ],
+      "tm_moves": ["Flamethrower", "Fire Blast", "Toxic", "Hidden Power", "Sunny Day", "Protect"],
+      "egg_moves": ["Covet", "Crush Claw", "Double Kick", "Extrasensory", "Flare Blitz", "Flame Burst"]
+    },
+    {
+      "pokemon_id": 158,
+      "name": "Totodile",
+      "level_up_moves": [
+        {"level": 1, "move": "Scratch"},
+        {"level": 1, "move": "Leer"},
+        {"level": 6, "move": "Water Gun"},
+        {"level": 8, "move": "Rage"},
+        {"level": 13, "move": "Bite"},
+        {"level": 15, "move": "Scary Face"},
+        {"level": 20, "move": "Ice Fang"},
+        {"level": 22, "move": "Flail"},
+        {"level": 27, "move": "Crunch"},
+        {"level": 29, "move": "Chip Away"},
+        {"level": 34, "move": "Slash"},
+        {"level": 36, "move": "Screech"},
+        {"level": 41, "move": "Thrash"},
+        {"level": 43, "move": "Aqua Tail"},
+        {"level": 48, "move": "Superpower"},
+        {"level": 50, "move": "Hydro Pump"}
+      ],
+      "tm_moves": ["Ice Beam", "Blizzard", "Protect", "Rain Dance", "Crunch", "Shadow Claw"],
+      "egg_moves": ["Ancient Power", "Aqua Jet", "Block", "Counter", "Crunch", "Dragon Dance"]
+    }
+  ]
+}

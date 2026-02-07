@@ -1,0 +1,235 @@
+# Dynamic Event Scripts for Gen VI Pokémon Game
+# Each script defines dialogue, choices, and game logic
+
+events:
+  - id: 0x0001
+    name: elm_intro
+    type: dialogue
+    trigger: interact
+    script:
+      - action: face_player
+      - action: text
+        content: "Hello there! Welcome to the world of POKéMON!"
+      - action: text
+        content: "My name is ELM. People call me the POKéMON PROF!"
+      - action: text
+        content: "This world is inhabited by creatures called POKéMON!"
+      - action: choice
+        prompt: "Are you ready to begin your adventure?"
+        options:
+          - text: "Yes!"
+            result: start_adventure
+          - text: "Not yet"
+            result: end_dialogue
+      - action: set_flag
+        flag: "TALKED_TO_ELM"
+        value: true
+
+  - id: 0x0002
+    name: mom_greeting
+    type: dialogue
+    trigger: interact
+    script:
+      - action: face_player
+      - action: conditional
+        condition: "has_flag('ADVENTURE_STARTED')"
+        true_branch:
+          - action: text
+            content: "Good luck on your journey, dear!"
+          - action: heal_party
+        false_branch:
+          - action: text
+            content: "Don't forget to pack your things!"
+
+  - id: 0x0003
+    name: rival_first
+    type: cutscene
+    trigger: position
+    script:
+      - action: text
+        content: "???: Hey! Wait up!"
+      - action: move_npc
+        npc: "rival"
+        path: [down, down, right, right]
+      - action: text
+        content: "RIVAL: I heard you're getting a POKéMON today!"
+      - action: text
+        content: "RIVAL: I'm getting one too! Let's battle sometime!"
+      - action: set_flag
+        flag: "MET_RIVAL"
+        value: true
+
+  - id: 0x0004
+    name: guide_gent
+    type: dialogue
+    trigger: interact
+    script:
+      - action: face_player
+      - action: conditional
+        condition: "not has_flag('GUIDE_GENT_TOUR')"
+        true_branch:
+          - action: text
+            content: "Hello! Would you like me to show you around?"
+          - action: choice
+            prompt: "Take the tour?"
+            options:
+              - text: "Yes"
+                result: start_tour
+              - text: "No thanks"
+                result: end_dialogue
+        false_branch:
+          - action: text
+            content: "Hope you're enjoying CHERRYGROVE CITY!"
+
+  - id: 0x0101
+    name: youngster_joey_battle
+    type: trainer_battle
+    trigger: sight
+    script:
+      - action: exclaim
+        npc: "youngster_joey"
+      - action: walk_to_player
+        npc: "youngster_joey"
+      - action: text
+        content: "YOUNGSTER JOEY: I like shorts! They're comfy and easy to wear!"
+      - action: battle
+        trainer: "youngster_joey"
+        can_lose: false
+      - action: conditional
+        condition: "battle_won"
+        true_branch:
+          - action: text
+            content: "YOUNGSTER JOEY: Wow! You're really good!"
+          - action: give_money
+            amount: 80
+          - action: set_flag
+            flag: "BEAT_JOEY"
+            value: true
+        false_branch:
+          - action: text
+            content: "YOUNGSTER JOEY: I won! But that was close!"
+          - action: warp
+            location: "last_pokemon_center"
+
+  - id: 0x0201
+    name: falkner_intro
+    type: dialogue
+    trigger: interact
+    script:
+      - action: face_player
+      - action: text
+        content: "FALKNER: I'm FALKNER, the VIOLET GYM LEADER!"
+      - action: text
+        content: "FALKNER: I've trained my flying POKéMON with dedication!"
+      - action: text
+        content: "FALKNER: Allow me to demonstrate the magnificent power we've gained!"
+      - action: battle
+        trainer: "falkner"
+        can_lose: true
+
+  - id: 0x0202
+    name: falkner_battle
+    type: gym_battle
+    trigger: interact
+    script:
+      - action: battle
+        trainer: "falkner"
+        can_lose: true
+      - action: conditional
+        condition: "battle_won"
+        true_branch:
+          - action: text
+            content: "FALKNER: ...I understand. I'll bow out gracefully."
+          - action: text
+            content: "FALKNER: Take this official POKéMON LEAGUE BADGE."
+          - action: give_badge
+            badge: "ZEPHYR_BADGE"
+          - action: give_tm
+            tm: "TM51"
+          - action: set_flag
+            flag: "BEAT_FALKNER"
+            value: true
+
+  - id: 0x1001
+    name: item_potion
+    type: item_pickup
+    trigger: interact
+    script:
+      - action: text
+        content: "Found a POTION!"
+      - action: give_item
+        item: "POTION"
+        quantity: 1
+      - action: set_flag
+        flag: "ITEM_ROUTE29_POTION"
+        value: true
+      - action: remove_object
+        object: "item_ball"
+
+  - id: 0x2001
+    name: silver_first_encounter
+    type: cutscene
+    trigger: story
+    script:
+      - action: text
+        content: "???: Heh. Finally, someone worth battling."
+      - action: move_npc
+        npc: "silver"
+        path: [down, down, down]
+      - action: text
+        content: "SILVER: I don't need any help from wimpy POKéMON or people!"
+      - action: battle
+        trainer: "silver_1"
+        can_lose: false
+      - action: text
+        content: "SILVER: Hmph. Whatever."
+      - action: move_npc
+        npc: "silver"
+        path: [up, up, up, left, left, left]
+      - action: set_flag
+        flag: "SILVER_ENCOUNTER_1"
+        value: true
+
+  - id: 0x3001
+    name: daycare_check
+    type: service
+    trigger: interact
+    script:
+      - action: face_player
+      - action: text
+        content: "DAYCARE MAN: Would you like me to raise your POKéMON?"
+      - action: choice
+        prompt: "Leave a POKéMON at the daycare?"
+        options:
+          - text: "Yes"
+            result: open_daycare_menu
+          - text: "No"
+            result: end_dialogue
+
+  - id: 0x3002
+    name: berry_tree_shake
+    type: interaction
+    trigger: interact
+    script:
+      - action: shake_tree
+      - action: conditional
+        condition: "random() < 0.3"
+        true_branch:
+          - action: text
+            content: "A BERRY fell from the tree!"
+          - action: give_item
+            item: "ORAN_BERRY"
+            quantity: 1
+        false_branch:
+          - action: text
+            content: "Nothing fell from the tree..."
+
+  - id: 0x4001
+    name: sign_new_bark_town
+    type: sign
+    trigger: interact
+    script:
+      - action: text
+        content: "NEW BARK TOWN"
+      - action: text
+        content: "The Town Where the Winds of a New Beginning Blow"

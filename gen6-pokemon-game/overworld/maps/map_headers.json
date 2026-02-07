@@ -1,0 +1,235 @@
+{
+  "maps": [
+    {
+      "id": 1,
+      "name": "New Bark Town",
+      "type": "town",
+      "region": "Johto",
+      "width": 20,
+      "height": 18,
+      "tileset": "johto_town_tileset",
+      "music": "new_bark_town",
+      "connections": {
+        "north": {"map_id": 2, "offset": 0},
+        "west": {"map_id": 10, "offset": 0}
+      },
+      "wild_pokemon": [],
+      "trainers": [],
+      "items": [],
+      "npcs": [
+        {"id": 1, "x": 10, "y": 8, "sprite": "professor_elm", "script": "elm_intro"},
+        {"id": 2, "x": 5, "y": 12, "sprite": "mom", "script": "mom_greeting"}
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Route 29",
+      "type": "route",
+      "region": "Johto",
+      "width": 54,
+      "height": 9,
+      "tileset": "johto_route_tileset",
+      "music": "route_29",
+      "connections": {
+        "south": {"map_id": 1, "offset": 0},
+        "north": {"map_id": 3, "offset": 0}
+      },
+      "wild_pokemon": [
+        {"species": "Pidgey", "level_min": 2, "level_max": 5, "rate": 40},
+        {"species": "Rattata", "level_min": 2, "level_max": 5, "rate": 40},
+        {"species": "Sentret", "level_min": 2, "level_max": 4, "rate": 20}
+      ],
+      "trainers": [
+        {
+          "id": 101,
+          "name": "Youngster Joey",
+          "x": 20,
+          "y": 5,
+          "sight_range": 3,
+          "team": [
+            {"species": "Rattata", "level": 4}
+          ],
+          "reward": 80
+        }
+      ],
+      "items": [
+        {"item": "Potion", "x": 30, "y": 4, "hidden": false}
+      ],
+      "npcs": []
+    },
+    {
+      "id": 3,
+      "name": "Cherrygrove City",
+      "type": "city",
+      "region": "Johto",
+      "width": 20,
+      "height": 27,
+      "tileset": "johto_city_tileset",
+      "music": "cherrygrove_city",
+      "connections": {
+        "south": {"map_id": 2, "offset": 0},
+        "north": {"map_id": 4, "offset": 0}
+      },
+      "wild_pokemon": [],
+      "trainers": [],
+      "items": [],
+      "npcs": [
+        {"id": 10, "x": 15, "y": 10, "sprite": "old_man", "script": "guide_gent"},
+        {"id": 11, "x": 8, "y": 15, "sprite": "youngster", "script": "rival_first"}
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Route 30",
+      "type": "route",
+      "region": "Johto",
+      "width": 9,
+      "height": 61,
+      "tileset": "johto_route_tileset",
+      "music": "route_30",
+      "connections": {
+        "south": {"map_id": 3, "offset": 0},
+        "north": {"map_id": 5, "offset": 0}
+      },
+      "wild_pokemon": [
+        {"species": "Pidgey", "level_min": 3, "level_max": 5, "rate": 40},
+        {"species": "Rattata", "level_min": 3, "level_max": 5, "rate": 30},
+        {"species": "Caterpie", "level_min": 3, "level_max": 4, "rate": 15},
+        {"species": "Weedle", "level_min": 3, "level_max": 4, "rate": 15}
+      ],
+      "trainers": [
+        {
+          "id": 102,
+          "name": "Youngster Mikey",
+          "x": 4,
+          "y": 20,
+          "sight_range": 2,
+          "team": [
+            {"species": "Pidgey", "level": 4},
+            {"species": "Rattata", "level": 4}
+          ],
+          "reward": 80
+        }
+      ],
+      "items": [
+        {"item": "Antidote", "x": 4, "y": 30, "hidden": false},
+        {"item": "Berry", "x": 6, "y": 45, "hidden": true}
+      ],
+      "npcs": []
+    },
+    {
+      "id": 5,
+      "name": "Violet City",
+      "type": "city",
+      "region": "Johto",
+      "width": 20,
+      "height": 27,
+      "tileset": "johto_city_tileset",
+      "music": "violet_city",
+      "connections": {
+        "south": {"map_id": 4, "offset": 0},
+        "west": {"map_id": 20, "offset": 0}
+      },
+      "wild_pokemon": [],
+      "trainers": [],
+      "items": [],
+      "npcs": [
+        {"id": 20, "x": 10, "y": 18, "sprite": "sage", "script": "elder_li"},
+        {"id": 21, "x": 15, "y": 10, "sprite": "gym_guide", "script": "violet_gym_guide"}
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Route 27",
+      "type": "route",
+      "region": "Johto",
+      "width": 45,
+      "height": 9,
+      "tileset": "johto_route_tileset",
+      "music": "route_27",
+      "connections": {
+        "east": {"map_id": 1, "offset": 0},
+        "west": {"map_id": 100, "offset": 0}
+      },
+      "wild_pokemon": [
+        {"species": "Pidgey", "level_min": 2, "level_max": 3, "rate": 30},
+        {"species": "Rattata", "level_min": 2, "level_max": 3, "rate": 30},
+        {"species": "Sentret", "level_min": 2, "level_max": 3, "rate": 30},
+        {"species": "Hoothoot", "level_min": 2, "level_max": 3, "rate": 10}
+      ],
+      "trainers": [],
+      "items": [
+        {"item": "Potion", "x": 15, "y": 4, "hidden": false}
+      ],
+      "npcs": []
+    },
+    {
+      "id": 20,
+      "name": "Sprout Tower",
+      "type": "dungeon",
+      "region": "Johto",
+      "width": 10,
+      "height": 12,
+      "tileset": "tower_interior",
+      "music": "sprout_tower",
+      "connections": {
+        "exit": {"map_id": 5, "offset": 0}
+      },
+      "wild_pokemon": [
+        {"species": "Rattata", "level_min": 3, "level_max": 6, "rate": 85},
+        {"species": "Gastly", "level_min": 3, "level_max": 6, "rate": 15}
+      ],
+      "trainers": [
+        {
+          "id": 201,
+          "name": "Sage Nico",
+          "x": 5,
+          "y": 6,
+          "sight_range": 3,
+          "team": [
+            {"species": "Bellsprout", "level": 7},
+            {"species": "Bellsprout", "level": 7}
+          ],
+          "reward": 224
+        },
+        {
+          "id": 202,
+          "name": "Sage Edmond",
+          "x": 5,
+          "y": 3,
+          "sight_range": 2,
+          "team": [
+            {"species": "Bellsprout", "level": 10}
+          ],
+          "reward": 320,
+          "is_gym_leader": true
+        }
+      ],
+      "items": [
+        {"item": "Escape Rope", "x": 2, "y": 8, "hidden": false},
+        {"item": "X Defend", "x": 8, "y": 4, "hidden": false}
+      ],
+      "npcs": []
+    },
+    {
+      "id": 100,
+      "name": "Kanto Border Gate",
+      "type": "gate",
+      "region": "Johto-Kanto",
+      "width": 10,
+      "height": 9,
+      "tileset": "gate_interior",
+      "music": "gate",
+      "connections": {
+        "east": {"map_id": 10, "offset": 0},
+        "west": {"map_id": 101, "offset": 0}
+      },
+      "wild_pokemon": [],
+      "trainers": [],
+      "items": [],
+      "npcs": [
+        {"id": 100, "x": 5, "y": 4, "sprite": "officer", "script": "guard_check"}
+      ]
+    }
+  ]
+}

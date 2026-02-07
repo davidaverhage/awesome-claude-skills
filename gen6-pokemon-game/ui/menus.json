@@ -1,0 +1,246 @@
+{
+  "menus": {
+    "main_menu": {
+      "id": "main_menu",
+      "title": "Menu",
+      "type": "vertical_list",
+      "position": {"x": 100, "y": 100},
+      "size": {"width": 200, "height": 300},
+      "items": [
+        {"id": "pokedex", "label": "POKéDEX", "icon": "pokedex.png", "enabled": true},
+        {"id": "pokemon", "label": "POKéMON", "icon": "pokemon.png", "enabled": true},
+        {"id": "bag", "label": "BAG", "icon": "bag.png", "enabled": true},
+        {"id": "trainer", "label": "TRAINER", "icon": "trainer.png", "enabled": true},
+        {"id": "save", "label": "SAVE", "icon": "save.png", "enabled": true},
+        {"id": "options", "label": "OPTION", "icon": "options.png", "enabled": true},
+        {"id": "exit", "label": "EXIT", "icon": null, "enabled": true}
+      ],
+      "cursor_style": "arrow",
+      "sound_effects": {
+        "move": "menu_move.ogg",
+        "select": "menu_select.ogg",
+        "cancel": "menu_cancel.ogg"
+      }
+    },
+    
+    "pokemon_menu": {
+      "id": "pokemon_menu",
+      "title": "POKéMON",
+      "type": "party_display",
+      "position": {"x": 0, "y": 0},
+      "size": {"width": 800, "height": 600},
+      "slots": 6,
+      "display_format": {
+        "name": {"x": 50, "y": 10, "font": "bold"},
+        "level": {"x": 200, "y": 10, "font": "normal"},
+        "hp_bar": {"x": 50, "y": 30, "width": 150, "height": 6},
+        "hp_text": {"x": 210, "y": 30, "font": "small"},
+        "status": {"x": 250, "y": 30, "font": "small"},
+        "sprite": {"x": 10, "y": 5, "size": 32}
+      },
+      "actions": [
+        {"id": "summary", "label": "SUMMARY"},
+        {"id": "switch", "label": "SWITCH"},
+        {"id": "item", "label": "ITEM"},
+        {"id": "cancel", "label": "CANCEL"}
+      ]
+    },
+    
+    "pokemon_summary": {
+      "id": "pokemon_summary",
+      "title": "POKéMON Info",
+      "type": "tabbed_view",
+      "tabs": [
+        {"id": "info", "label": "INFO", "icon": "info.png"},
+        {"id": "stats", "label": "STATS", "icon": "stats.png"},
+        {"id": "moves", "label": "MOVES", "icon": "moves.png"},
+        {"id": "ribbons", "label": "RIBBONS", "icon": "ribbons.png"}
+      ],
+      "info_tab": {
+        "fields": [
+          {"label": "Species", "key": "species", "x": 50, "y": 100},
+          {"label": "Type", "key": "type", "x": 50, "y": 130},
+          {"label": "OT", "key": "original_trainer", "x": 50, "y": 160},
+          {"label": "ID No.", "key": "trainer_id", "x": 50, "y": 190},
+          {"label": "Exp. Points", "key": "exp", "x": 50, "y": 220}
+        ]
+      },
+      "stats_tab": {
+        "stats": ["HP", "Attack", "Defense", "Sp. Atk", "Sp. Def", "Speed"],
+        "display_bars": true
+      },
+      "moves_tab": {
+        "max_moves": 4,
+        "display_format": {
+          "name": {"x": 50, "y": "auto", "font": "normal"},
+          "pp": {"x": 250, "y": "auto", "font": "small"},
+          "type": {"x": 300, "y": "auto", "icon": true}
+        }
+      }
+    },
+    
+    "bag_menu": {
+      "id": "bag_menu",
+      "title": "BAG",
+      "type": "grid_inventory",
+      "categories": [
+        {"id": "items", "label": "ITEMS", "icon": "items.png"},
+        {"id": "medicine", "label": "MEDICINE", "icon": "medicine.png"},
+        {"id": "pokeballs", "label": "POKé BALLS", "icon": "pokeballs.png"},
+        {"id": "tms_hms", "label": "TMs & HMs", "icon": "tms.png"},
+        {"id": "berries", "label": "BERRIES", "icon": "berries.png"},
+        {"id": "key_items", "label": "KEY ITEMS", "icon": "key.png"}
+      ],
+      "items_per_page": 8,
+      "display_format": {
+        "icon": {"x": 10, "y": "auto", "size": 24},
+        "name": {"x": 45, "y": "auto", "font": "normal"},
+        "quantity": {"x": 250, "y": "auto", "font": "small"}
+      }
+    },
+    
+    "battle_menu": {
+      "id": "battle_menu",
+      "title": null,
+      "type": "battle_interface",
+      "position": {"x": 0, "y": 400},
+      "size": {"width": 800, "height": 200},
+      "main_options": [
+        {"id": "fight", "label": "FIGHT", "icon": "fight.png"},
+        {"id": "pokemon", "label": "POKéMON", "icon": "pokemon.png"},
+        {"id": "bag", "label": "BAG", "icon": "bag.png"},
+        {"id": "run", "label": "RUN", "icon": "run.png"}
+      ],
+      "move_display": {
+        "layout": "2x2_grid",
+        "show_pp": true,
+        "show_type": true,
+        "show_category": true
+      },
+      "info_display": {
+        "player_pokemon": {"x": 500, "y": 300},
+        "opponent_pokemon": {"x": 150, "y": 100},
+        "show_hp_bar": true,
+        "show_exp_bar": true,
+        "show_status": true
+      }
+    },
+    
+    "save_menu": {
+      "id": "save_menu",
+      "title": "SAVE",
+      "type": "confirmation_dialog",
+      "message": "Would you like to save the game?",
+      "options": [
+        {"id": "yes", "label": "YES"},
+        {"id": "no", "label": "NO"}
+      ],
+      "save_info": {
+        "display_fields": [
+          "player_name",
+          "badges",
+          "pokedex_seen",
+          "pokedex_owned",
+          "play_time"
+        ]
+      }
+    },
+    
+    "options_menu": {
+      "id": "options_menu",
+      "title": "OPTIONS",
+      "type": "settings_list",
+      "settings": [
+        {
+          "id": "text_speed",
+          "label": "Text Speed",
+          "type": "choice",
+          "options": ["SLOW", "NORMAL", "FAST"],
+          "default": "NORMAL"
+        },
+        {
+          "id": "battle_scene",
+          "label": "Battle Scene",
+          "type": "toggle",
+          "options": ["ON", "OFF"],
+          "default": "ON"
+        },
+        {
+          "id": "battle_style",
+          "label": "Battle Style",
+          "type": "choice",
+          "options": ["SHIFT", "SET"],
+          "default": "SHIFT"
+        },
+        {
+          "id": "sound",
+          "label": "Sound",
+          "type": "choice",
+          "options": ["STEREO", "MONO"],
+          "default": "STEREO"
+        },
+        {
+          "id": "button_mode",
+          "label": "Button Mode",
+          "type": "choice",
+          "options": ["NORMAL", "L=A"],
+          "default": "NORMAL"
+        },
+        {
+          "id": "frame",
+          "label": "Frame",
+          "type": "choice",
+          "options": ["TYPE 1", "TYPE 2", "TYPE 3"],
+          "default": "TYPE 1"
+        }
+      ]
+    },
+    
+    "pokedex_menu": {
+      "id": "pokedex_menu",
+      "title": "POKéDEX",
+      "type": "scrollable_list",
+      "view_modes": ["LIST", "SEARCH"],
+      "list_view": {
+        "items_per_page": 10,
+        "display_format": {
+          "number": {"x": 10, "y": "auto", "font": "small"},
+          "icon": {"x": 50, "y": "auto", "size": 32},
+          "name": {"x": 90, "y": "auto", "font": "normal"},
+          "caught_icon": {"x": 250, "y": "auto", "size": 16}
+        }
+      },
+      "detail_view": {
+        "fields": [
+          "species",
+          "type",
+          "height",
+          "weight",
+          "description",
+          "area"
+        ],
+        "show_sprite": true,
+        "show_cry_button": true
+      }
+    },
+    
+    "trainer_card": {
+      "id": "trainer_card",
+      "title": "Trainer Card",
+      "type": "info_display",
+      "fields": [
+        {"label": "Name", "key": "player_name", "x": 100, "y": 100},
+        {"label": "ID No.", "key": "player_id", "x": 100, "y": 130},
+        {"label": "Money", "key": "money", "x": 100, "y": 160, "format": "¥%d"},
+        {"label": "POKéDEX", "key": "pokedex_count", "x": 100, "y": 200},
+        {"label": "Play Time", "key": "play_time", "x": 100, "y": 230}
+      ],
+      "badges_display": {
+        "x": 400,
+        "y": 100,
+        "grid": "2x4",
+        "badge_size": 32
+      }
+    }
+  }
+}
